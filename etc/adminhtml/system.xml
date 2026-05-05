@@ -2,75 +2,76 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <tab id="hk2_options_tab" sortOrder="60" translate="label">
-            <label>HK2</label>
-        </tab>
-
-        <section id="hk2_addbootstrap5_section1" showInDefault="1" showInWebsite="0" showInStore="0" sortOrder="1"
-                 translate="label">
-            <label><![CDATA[AddBootstrap5]]></label>
+        <section id="hk2_addbootstrap5_section1" translate="label" sortOrder="2" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <label>Add Bootstrap5</label>
             <tab>hk2_options_tab</tab>
-            <resource>HK2_AddBootstrap5::config</resource>
+            <resource>HK2_AddBootstrap5::core_config</resource>
 
-            <!-- Group 1 Settings -->
-            <group id="hk2_addbootstrap5_section1_group1" showInDefault="1" showInWebsite="0" showInStore="0"
-                   sortOrder="1" translate="label">
-                <label><![CDATA[AddBootstrap5]]></label>
+            <!-- Module Information Header -->
+            <group id="hk2_addbootstrap5_module_info" showInDefault="1" showInWebsite="0" showInStore="0" sortOrder="0"
+                   translate="label">
+                <label><![CDATA[About HK2 Extensions]]></label>
 
-                <field id="hk2_addBootstrap5_enable" showInDefault="1" showInWebsite="0" showInStore="0" type="select"
-                       sortOrder="0" translate="label">
-                    <label><![CDATA[GeneralOptions]]></label>
-                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                    <comment>
-                        <![CDATA[Enable_Help_Message]]>
-                    </comment>
+                <field id="hk2_addbootstrap5_module_header" type="note" sortOrder="0" showInDefault="1"
+                       showInWebsite="0" showInStore="0">
+                    <frontend_model>HK2\Core\Block\Adminhtml\System\Config\ModuleHeader</frontend_model>
                 </field>
             </group>
 
-            <!-- Group 2 Settings -->
+            <!-- Group 2 - General Settings -->
             <group id="hk2_addbootstrap5_section1_group2" showInDefault="1" showInWebsite="0" showInStore="0"
-                   sortOrder="3" translate="label">
-                <label><![CDATA[BootstrapOptions]]></label>
+                   sortOrder="1" translate="label">
+                <label><![CDATA[General Settings]]></label>
+
+                <field id="hk2_addbootstrap5_enable" showInDefault="1" showInWebsite="0" showInStore="0" type="select"
+                       sortOrder="0" translate="label">
+                    <label><![CDATA[Enable Extension]]></label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>
+                        <![CDATA[Enable or disable the Bootstrap 5 extension]]>
+                    </comment>
+                </field>
 
                 <field id="hk2_addBootstrap5_select_bootstrap_version" showInDefault="1" showInWebsite="0"
                        showInStore="0" type="select" sortOrder="0" translate="label">
-                    <label><![CDATA[SelectBootstrapVersion]]></label>
+                    <label><![CDATA[Select Bootstrap Version]]></label>
                     <source_model>HK2\AddBootstrap5\Model\Config\BootstrapVersion</source_model>
-                    <comment>
-                        <![CDATA[Select_Bootstrap_Version_Help_Message]]>
-                    </comment>
+                    <comment><![CDATA[Select Bootstrap version from 4.0.0 to 5.3.8]]></comment>
                 </field>
 
-                <field id="hk2_addBootstrap5_debug" showInDefault="1" showInWebsite="0" showInStore="0" type="select"
-                       sortOrder="0" translate="label">
-                    <label><![CDATA[EnableDebugMode]]></label>
+                <field id="hk2_addbootstrap5_select_cdn" showInDefault="1" showInWebsite="0" showInStore="0"
+                       type="select" sortOrder="1" translate="label">
+                    <label><![CDATA[Select CDN Provider]]></label>
+                    <source_model>HK2\AddBootstrap5\Model\Config\CdnProvider</source_model>
+                    <comment><![CDATA[Select CDN provider for loading Bootstrap files]]></comment>
+                </field>
+
+                <field id="hk2_addbootstrap5_debug" showInDefault="1" showInWebsite="0" showInStore="0" type="select"
+                       sortOrder="2" translate="label">
+                    <label><![CDATA[Enable Debug Mode]]></label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                    <comment>
-                        <![CDATA[Debug_Help_Message]]>
-                    </comment>
+                    <comment><![CDATA[Enable debug mode to display Bootstrap loading information]]></comment>
                 </field>
             </group>
 
-            <!-- Group 3 Settings -->
+            <!-- Group 3 - Demo & Links -->
             <group id="hk2_addbootstrap5_section1_group3" showInDefault="1" showInWebsite="0" showInStore="0"
-                   sortOrder="2" translate="label">
-                <label><![CDATA[DemoLinks]]></label>
+                   sortOrder="4" translate="label">
+                <label><![CDATA[Demonstration & Links]]></label>
 
-                <field id="hk2_addBootstrap5_debug_demo_link_v5" translate="label" type="label" sortOrder="1"
-                       showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label><![CDATA[Bootstrap5DemoLinkMsg]]></label>
-                    <comment>
-                        <model>HK2\AddBootstrap5\Model\Config\DemoLinkv5</model>
-                    </comment>
+                <field id="hk2_addbootstrap5_demo_link_v4" type="note" sortOrder="1" showInDefault="1" showInWebsite="0"
+                       showInStore="0">
+                    <label><![CDATA[Bootstrap 4 Demo]]></label>
+                    <frontend_model>HK2\AddBootstrap5\Block\Adminhtml\System\Config\DemoLinkV4</frontend_model>
                 </field>
 
-                <field id="hk2_addBootstrap5_debug_demo_link_v4" translate="label" type="label" sortOrder="1"
-                       showInDefault="1" showInWebsite="0" showInStore="0">
-                    <label><![CDATA[Bootstrap4DemoLinkMsg]]></label>
-                    <comment>
-                        <model>HK2\AddBootstrap5\Model\Config\DemoLinkv4</model>
-                    </comment>
+                <field id="hk2_addbootstrap5_demo_link_v5" type="note" sortOrder="1" showInDefault="1" showInWebsite="0"
+                       showInStore="0">
+                    <label><![CDATA[Bootstrap 5 Demo]]></label>
+                    <frontend_model>HK2\AddBootstrap5\Block\Adminhtml\System\Config\DemoLinkV5</frontend_model>
                 </field>
+
             </group>
         </section>
     </system>

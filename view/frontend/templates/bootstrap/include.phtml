@@ -1,0 +1,39 @@
+<?php if (!$block->isEnabled()) {
+    return;
+} ?>
+
+<script>
+    window.addEventListener('load', function () {
+        const originalAmd = window.define && window.define.amd;
+
+        if (window.define && window.define.amd) {
+            window.define.amd = false;
+        }
+
+        const script = document.createElement('script');
+        script.src = "<?= $escaper->escapeUrl($block->getCdnUrls()['js']) ?>";
+        script.async = true;
+        script.onload = function () {
+            if (window.define) {
+                window.define.amd = originalAmd;
+            }
+        };
+
+        document.body.appendChild(script);
+    });
+</script>
+
+
+<?php if ($block->isDebugEnabled()): ?>
+    <script type="text/x-magento-init">
+        {
+            "*": {
+                "HK2_AddBootstrap5/js/bootstrap-debug":
+                    {
+                        "version": "<?= $escaper->escapeJs($block->getBootstrapVersion()) ?>",
+                        "cdn": "<?= $escaper->escapeJs($block->getCdnProvider()) ?>"
+                    }
+                }
+        }
+    </script>
+<?php endif; ?>

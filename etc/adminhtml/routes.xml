@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
-    <router id="standard">
-        <route id="addbootstrap5" frontName="addbootstrap5">
-            <module name="HK2_AddBootstrap5"/>
+    <router id="admin">
+        <route id="hk2_addbootstrap5" frontName="hk2_addbootstrap5">
+            <module name="HK2_AddBootstrap5" before="Magento_Backend"/>
         </route>
     </router>
 </config>

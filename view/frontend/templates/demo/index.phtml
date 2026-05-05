@@ -1,0 +1,244 @@
+<?php
+
+/** @var Index $block */
+
+use HK2\AddBootstrap5\Block\Demo\Index;
+
+$demo = $block->getDemoContent();
+$isBs5 = ((int)$demo['version'] >= 5);
+?>
+<div class="container mt-5">
+
+    <!-- Intro Alert -->
+    <div class="alert alert-info mt-4 mb-4">
+    This page demonstrates few of Bootstrap <?= $escaper->escapeHtml($demo['version']) ?> components and utilities.
+    </div>
+
+    <!-- Alerts -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2>Alerts</h2>
+            <div class="alert alert-primary">Primary alert</div>
+            <div class="alert alert-success">Success alert</div>
+            <div class="alert alert-danger">Danger alert</div>
+        </div>
+    </div>
+
+    <!-- Table -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2>Table</h2>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Handle</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th>1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th>2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th>3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Accordion v5 -->
+    <?php if ($isBs5): ?>
+        <div class="accordion row mb-4" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne">
+                        Accordion Item #1
+                    </button>
+                </h2>
+                <div id="collapseOne"
+                     class="accordion-collapse collapse show"
+                     data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Bootstrap 5 accordion content.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo">
+                        Accordion Item #2
+                    </button>
+                </h2>
+                <div id="collapseTwo"
+                     class="accordion-collapse collapse"
+                     data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Second item content.
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
+
+    <!-- Accordion v4 -->
+    <?php if (!$isBs5): ?>
+        <div id="accordionExample" class="row mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <button class="btn btn-link"
+                            data-toggle="collapse"
+                            data-target="#collapseOne">
+                        Accordion Item #1
+                    </button>
+                </div>
+                <div id="collapseOne"
+                     class="collapse show"
+                     data-parent="#accordionExample">
+                    <div class="card-body">
+                        Bootstrap 4 accordion content.
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <button class="btn btn-link collapsed"
+                            data-toggle="collapse"
+                            data-target="#collapseTwo">
+                        Accordion Item #2
+                    </button>
+                </div>
+                <div id="collapseTwo"
+                     class="collapse"
+                     data-parent="#accordionExample">
+                    <div class="card-body">
+                        Second item content.
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
+
+    <!-- Buttons -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2>Buttons</h2>
+            <button class="btn btn-primary">Primary</button>
+            <button class="btn btn-secondary">Secondary</button>
+            <button class="btn btn-success">Success</button>
+            <button class="btn btn-danger">Danger</button>
+            <button class="btn btn-warning">Warning</button>
+            <button class="btn btn-info">Info</button>
+            <button class="btn btn-light">Light</button>
+            <button class="btn btn-dark">Dark</button>
+        </div>
+    </div>
+
+    <!-- Grid -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2>Grid System</h2>
+        </div>
+        <div class="col-md-4 mb-2">
+            <div class="p-3 bg-primary text-white rounded">Column 1</div>
+        </div>
+        <div class="col-md-4 mb-2">
+            <div class="p-3 bg-secondary text-white rounded">Column 2</div>
+        </div>
+        <div class="col-md-4 mb-2">
+            <div class="p-3 bg-success text-white rounded">Column 3</div>
+        </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2>Cards</h2>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-header">Featured</div>
+                <div class="card-body">
+                    <h5 class="card-title">Special title</h5>
+                    <p class="card-text">Supporting text for the card.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Quick example card content.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forms -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2>Form Elements</h2>
+
+            <form>
+                <div class="mb-3">
+                    <label class="form-label">Email address</label>
+                    <input type="email" class="form-control">
+                    <small class="form-text text-muted">
+                        We'll never share your email.
+                    </small>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Select</label>
+                    <select class="form-control form-select">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input type="checkbox" class="form-check-input">
+                    <label class="form-check-label">Check me out</label>
+                </div>
+
+                <button class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Verification -->
+    <div class="alert alert-info mt-4 mb-4">
+        <h4>Bootstrap <?= $escaper->escapeHtml($demo['version']) ?> Verification</h4>
+        <p>If everything above is styled correctly, Bootstrap is working.</p>
+    </div>
+</div>

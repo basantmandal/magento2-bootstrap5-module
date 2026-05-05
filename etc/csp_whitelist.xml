@@ -1,19 +1,24 @@
 <?xml version="1.0"?>
-<csp_whitelist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Csp:etc/csp_whitelist.xsd">
+<csp_whitelist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation="urn:magento:framework:Csp/etc/csp_whitelist.xsd">
     <policies>
         <policy id="script-src">
             <values>
-                <value id="jsdelivr.net" type="host">cdn.jsdelivr.net</value>
+                <value id="jsdelivr" type="host">cdn.jsdelivr.net</value>
+                <value id="cdnjs" type="host">cdnjs.cloudflare.com</value>
+                <value id="unpkg" type="host">unpkg.com</value>
             </values>
         </policy>
         <policy id="style-src">
             <values>
-                <value id="cdn.jsdelivr.net" type="host">cdn.jsdelivr.net</value>
+                <value id="jsdelivr" type="host">cdn.jsdelivr.net</value>
+                <value id="cdnjs" type="host">cdnjs.cloudflare.com</value>
+                <value id="unpkg" type="host">unpkg.com</value>
             </values>
         </policy>
         <policy id="img-src">
             <values>
-                <value id="data" type="host">data:</value>
+                <value id="basantmandal" type="host">www.basantmandal.in</value>
             </values>
         </policy>
     </policies>

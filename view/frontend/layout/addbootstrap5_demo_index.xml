@@ -1,0 +1,11 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <!-- <block class="HK2\AddBootstrap5\Block\Bootstrap\BootstrapAssets" name="hk2.bootstrap.assets" template="HK2_AddBootstrap5::bootstrap/include.phtml" before="-" /> -->
+
+            <block class="HK2\AddBootstrap5\Block\Demo\Index" name="hk2.bootstrap.demo"
+                   template="HK2_AddBootstrap5::demo/index.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

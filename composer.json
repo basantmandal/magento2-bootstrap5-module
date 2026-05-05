@@ -1,39 +1,53 @@
 {
-    "name": "hk2/addbootstrap5",
-    "description": "HK2 Add Bootstrap 5 Module adds Bootstrap 5 Support in the Default or Active Theme. Bootstrap 5 is the newest version of Bootstrap and is the world's most popular framework for building responsive, mobile-first sites. Bootstrap is an open-source framework that allows you to create responsive, professional-looking websites with ease.For backward compatibility you can also select Bootstrap 4 from Module Configuration",
-    "type": "magento2-module",
-    "require": {
-        "magento/framework": ">=100.0.0",
-        "php": "^7.3.0|^7.4.0|^8.0|^8.1.0|^8.2.0"
-    },
-    "version": "2.1.0",
-    "license": [
-        "OSL-3.0"
+  "name": "hk2/addbootstrap5",
+  "description": "Magento 2 extension that enables administrators to load Bootstrap 4 or Bootstrap 5 on the storefront without modifying theme files or creating child themes.",
+  "type": "magento2-module",
+  "require": {
+    "php": "^8.1 || ^8.2 || ^8.3 ||  ^8.4",
+    "magento/framework": "^103.0.0",
+    "hk2/core": "^1.0"
+  },
+  "license": [
+    "OSL-3.0"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
     ],
-    "authors": [
-        {
-            "name": "Basant Mandal",
-            "email": "support@hashtagkitto.co.in",
-            "homepage": "https://www.basantmandal.in",
-            "role": "Technical Support"
-        }
-    ],
-    "keywords": [
-        "HK2",
-        "Basant",
-        "basantmandal.in",
-        "HK2_AddBootstrap5",
-        "Bootstrap 4",
-        "Bootstrap 5",
-        "magento2",
-        "extension"
-    ],
-    "autoload": {
-        "files": [
-            "registration.php"
-        ],
-        "psr-4": {
-            "HK2\\AddBootstrap5\\": ""
-        }
+    "psr-4": {
+      "HK2\\AddBootstrap5\\": ""
     }
+  },
+  "archive": {
+    "exclude": [
+      "/.github",
+      "/.gitignore",
+      "/.releaserc.json",
+      "/build",
+      "/composer.lock",
+      "/node_modules",
+      "/package-lock.json",
+      "/package.json",
+      "/phpcs.xml",
+      "/tests"
+    ]
+  },
+  "authors": [
+    {
+      "name": "Basant Mandal",
+      "email": "support@basantmandal.in",
+      "homepage": "https://www.basantmandal.in"
+    }
+  ],
+  "support": {
+    "email": "support@basantmandal.in"
+  },
+  "keywords": [
+    "addbootstrap5",
+    "bootstrap4",
+    "bootstrap5",
+    "hk2",
+    "magento-module",
+    "magento2"
+  ]
 }
