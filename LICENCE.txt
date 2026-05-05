@@ -1,0 +1,59 @@
+Open Software License (OSL 3.0)
+
+Copyright © 2023–present Basant Mandal (Hash Tag Kitto) (HK2)
+
+This file is part of the HK2 software, including any module, extension, or derivative works.
+
+LICENSE TERMS AND CONDITIONS
+
+1. DEFINITIONS
+
+"License" shall mean the terms and conditions contained in this document.
+
+"Licensor" shall mean Basant Mandal or any entity who holds the copyright in the Software.
+
+"Software" shall mean the original work of authorship and any modifications, additions, or derivative works made thereto.
+
+2. GRANT OF LICENSE
+
+Subject to the terms and conditions of this License, the Licensor grants You a worldwide, royalty-free, non-exclusive license to:
+
+(a) Use, copy, modify, and distribute the Software in source and/or binary form;
+
+(b) Sublicense the Software;
+
+(c) Distribute derivative works of the Software under this License.
+
+3. CONDITIONS
+
+You must:
+
+(a) Retain this License in the Software or any substantial portion of it;
+
+(b) Include appropriate attribution to the Licensor in any distribution;
+
+(c) Not remove or obscure any copyright or license notices.
+
+4. DISCLAIMER OF WARRANTY
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+
+5. LIMITATION OF LIABILITY
+
+In no event shall the Licensor be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the Software or the use or other dealings in the Software.
+
+6. TERMINATION
+
+This License shall terminate automatically if You fail to comply with any of its terms. Upon termination, You must destroy all copies of the Software.
+
+7. GENERAL
+
+(a) This License shall be governed by the laws of the jurisdiction in which the Licensor resides.
+
+(b) Nothing in this License shall restrict any rights You may have under applicable law.
+
+(c) Any disputes arising under this License shall be resolved in a court of competent jurisdiction in the Licensor’s location.
+
+---
+
+For the full official OSL-3.0 license text, see: https://opensource.org/licenses/OSL-3.0
