@@ -26,6 +26,11 @@ class BootstrapAssets extends Template
     private ScopeConfigInterface $scopeConfig;
 
     /**
+     * @var PageConfig
+     */
+    private PageConfig $pageConfig;
+
+    /**
      * Constructor
      *
      * @param Context              $context
