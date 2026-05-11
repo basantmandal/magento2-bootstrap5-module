@@ -4,8 +4,10 @@
 # Exclude development files from composer distribution
 /.github export-ignore
 /.vscode export-ignore
-PROJECT.md export-ignore
+AGENT.md export-ignore
 phpcs.xml export-ignore
+/.idea export-ignore
+/.releaserc.json export-ignore
 .gitignore export-ignore
 .gitattributes export-ignore
 

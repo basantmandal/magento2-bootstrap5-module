@@ -7,9 +7,9 @@ body:
     attributes:
       value: |
         ## Thank you for reporting a bug!
-        
+
         Please fill out the form below with as much detail as possible. This helps us investigate and resolve the issue quickly.
-        
+
         > **Before reporting:** Please check if a similar issue already exists.
 
   - type: input
@@ -17,7 +17,7 @@ body:
     attributes:
       label: Module Version
       description: What version of HK2 AddBootstrap5 are you using?
-      placeholder: "e.g., 3.0.0"
+      placeholder: "e.g., 1.0.0"
     validations:
       required: true
 

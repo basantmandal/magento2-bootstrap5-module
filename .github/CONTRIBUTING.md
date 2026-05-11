@@ -4,10 +4,11 @@
 
 **First off, thank you for considering contributing to the HK2 AddBootstrap5 Module! It's people like you that make it such a great tool.**
 
-<img src="https://img.shields.io/badge/version-3.0.0-blue?style=flat-square" alt="Version">
+<img src="https://img.shields.io/badge/version-1.0.0-blue?style=flat-square" alt="Version">
 <img src="https://img.shields.io/badge/license-OSL--3.0-green?style=flat-square" alt="License">
 <a href="https://www.basantmandal.in/"><img src="https://img.shields.io/badge/Website-000?style=flat-square&logo=ko-fi&logoColor=white" alt="Website"></a>
 <a href="https://www.linkedin.com/in/basantmandal/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+<a href="mailto:support@basantmandal.in"><img src="https://img.shields.io/badge/Email-support%40basantmandal.in-blue?style=flat-square&logo=gmail" alt="Email"></a>
 
 </div>
 
@@ -70,7 +71,7 @@ Enhancement suggestions are welcome! When suggesting a feature:
 
 We follow [Conventional Commits](https://www.conventionalcommits.org/):
 
-```
+```text
 type(scope): description
 
 [optional body]
@@ -87,12 +88,6 @@ type(scope): description
 - `refactor`: Code refactoring
 - `test`: Adding or updating tests
 - `chore`: Maintenance tasks
-
-**Example:**
-
-```
-feat(cdn): add support for unpkg CDN provider
-```
 
 ---
 
@@ -116,7 +111,7 @@ vendor/bin/phpcs --standard=phpcs.xml
 
 Follow Magento 2 module structure:
 
-```
+```text
 app/code/HK2/AddBootstrap5/
 ├── Controller/
 ├── etc/
@@ -141,6 +136,6 @@ app/code/HK2/AddBootstrap5/
   <a href="https://www.basantmandal.in/"><img src="https://img.shields.io/badge/Website-000?style=flat-square&logo=ko-fi&logoColor=white" alt="Website"></a>
   <a href="https://www.linkedin.com/in/basantmandal/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
   <a href="mailto:support@basantmandal.in"><img src="https://img.shields.io/badge/Email-support%40basantmandal.in-blue?style=flat-square&logo=gmail" alt="Email"></a>
-  
+
   ---
 </div>
