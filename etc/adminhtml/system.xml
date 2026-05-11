@@ -4,7 +4,7 @@
     <system>
         <section id="hk2_addbootstrap5_section1" translate="label" sortOrder="2" showInDefault="1" showInWebsite="1"
                  showInStore="1">
-            <label>Add Bootstrap5</label>
+            <label><![CDATA[Add Bootstrap5]]></label>
             <tab>hk2_options_tab</tab>
             <resource>HK2_AddBootstrap5::core_config</resource>
 
@@ -25,30 +25,28 @@
                 <label><![CDATA[General Settings]]></label>
 
                 <field id="hk2_addbootstrap5_enable" showInDefault="1" showInWebsite="0" showInStore="0" type="select"
-                       sortOrder="0" translate="label">
+                       sortOrder="0" translate="label comment">
                     <label><![CDATA[Enable Extension]]></label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                    <comment>
-                        <![CDATA[Enable or disable the Bootstrap 5 extension]]>
-                    </comment>
+                    <comment><![CDATA[Enable or disable the Bootstrap 5 extension]]></comment>
                 </field>
 
                 <field id="hk2_addBootstrap5_select_bootstrap_version" showInDefault="1" showInWebsite="0"
-                       showInStore="0" type="select" sortOrder="0" translate="label">
+                       showInStore="0" type="select" sortOrder="0" translate="label comment">
                     <label><![CDATA[Select Bootstrap Version]]></label>
                     <source_model>HK2\AddBootstrap5\Model\Config\BootstrapVersion</source_model>
                     <comment><![CDATA[Select Bootstrap version from 4.0.0 to 5.3.8]]></comment>
                 </field>
 
                 <field id="hk2_addbootstrap5_select_cdn" showInDefault="1" showInWebsite="0" showInStore="0"
-                       type="select" sortOrder="1" translate="label">
+                       type="select" sortOrder="1" translate="label comment">
                     <label><![CDATA[Select CDN Provider]]></label>
                     <source_model>HK2\AddBootstrap5\Model\Config\CdnProvider</source_model>
                     <comment><![CDATA[Select CDN provider for loading Bootstrap files]]></comment>
                 </field>
 
                 <field id="hk2_addbootstrap5_debug" showInDefault="1" showInWebsite="0" showInStore="0" type="select"
-                       sortOrder="2" translate="label">
+                       sortOrder="2" translate="label comment">
                     <label><![CDATA[Enable Debug Mode]]></label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                     <comment><![CDATA[Enable debug mode to display Bootstrap loading information]]></comment>
