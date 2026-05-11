@@ -1,3 +1,11 @@
+## [3.1.1](https://github.com/basantmandal/magento2-bootstrap5-module/compare/3.1.0...3.1.1) (2026-05-11)
+
+### 🐛 Bug Fixes
+
+* add missing docblock for pageConfig property in BootstrapAssets class ([d197bac](https://github.com/basantmandal/magento2-bootstrap5-module/commit/d197bac7729d74137a8e28fd2669066be9174965))
+* add strict types declaration to multiple PHP files ([6f6b2c1](https://github.com/basantmandal/magento2-bootstrap5-module/commit/6f6b2c1114837d300aa2c834d9dfd4a8a64301d9))
+* correct resource ID for HK2_AddBootstrap5 settings in acl.xml ([d25e666](https://github.com/basantmandal/magento2-bootstrap5-module/commit/d25e666dcb7470611ff9f966710b16f9ae7dad9e))
+
 ## [3.1.0](https://github.com/basantmandal/magento2-bootstrap5-module/compare/v3.0.0...3.1.0) (2026-05-11)
 
 ### ✨ Features
