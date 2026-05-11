@@ -10,36 +10,35 @@ permissions:
   issues: write
   pull-requests: write
 
+concurrency:
+  group: release
+  cancel-in-progress: false
+
 jobs:
   release:
+    name: Release
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Sync with remote
-        run: |
-          git fetch origin main
-          git reset --hard origin/main
-
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Fetch tags
-        run: git fetch --tags
-
-      - name: Install deps
-        run: >
-          npm install --no-save semantic-release
-          @semantic-release/commit-analyzer
-          @semantic-release/release-notes-generator @semantic-release/changelog
-          @semantic-release/git @semantic-release/github
-          conventional-changelog-conventionalcommits
+      - name: Install dependencies
+        run: |
+          npm install --no-save \
+            semantic-release \
+            @semantic-release/commit-analyzer \
+            @semantic-release/release-notes-generator \
+            @semantic-release/changelog \
+            @semantic-release/git \
+            @semantic-release/github \
+            conventional-changelog-conventionalcommits
 
       - name: Run semantic-release
         env:
