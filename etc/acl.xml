@@ -7,7 +7,7 @@
                 <resource id="Magento_Backend::stores">
                     <resource id="Magento_Backend::stores_settings">
                         <resource id="Magento_Config::config">
-                            <resource id="HK2_AddBootstrap5::settings"
+                            <resource id="HK2_AddBootstrap5::core_config"
                                       title="HK2 Bootstrap5 Settings"/>
                         </resource>
                     </resource>
