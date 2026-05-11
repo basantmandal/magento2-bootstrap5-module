@@ -1,164 +1,82 @@
 # Compatibility Guide
 
-**HK2 AddBootstrap5 for Magento 2** — `hk2/addbootstrap5 v3.0.0`
+## Magento Versions
 
----
+HK2_AddBootstrap5 is compatible with Magento **2.4.x** across all editions:
 
-## Table of Contents
+| Magento Edition | Compatibility |
+|---|---|
+| Magento Open Source 2.4.x | Yes |
+| Adobe Commerce (formerly Magento Commerce) 2.4.x | Yes |
+| Adobe Commerce Cloud 2.4.x | Yes |
 
-- [Platform Requirements](#platform-requirements)
-- [Bootstrap Version Support](#bootstrap-version-support)
-- [CDN Provider Support](#cdn-provider-support)
-- [PHP Version Matrix](#php-version-matrix)
-- [Magento Edition Support](#magento-edition-support)
-- [Database Compatibility](#database-compatibility)
-- [Content Security Policy (CSP)](#content-security-policy-csp)
-- [Frontend Theme Compatibility](#frontend-theme-compatibility)
-- [Known Incompatibilities](#known-incompatibilities)
+The module requires `magento/framework` **^103.0.0**, which corresponds to the Magento 2.4.x release line.
 
----
+### Module sequence
 
-## Platform Requirements
+The module loads after the following modules (defined in `etc/module.xml`):
 
-| Requirement           | Minimum Version | Recommended |
-| --------------------- | --------------- | ----------- |
-| Magento Open Source   | 2.4.4           | 2.4.7+      |
-| Adobe Commerce        | 2.4.4           | 2.4.7+      |
-| PHP                   | 8.2             | 8.2 / 8.3   |
-| Composer              | 2.x             | 2.x         |
-| MySQL                 | 8.0             | 8.0+        |
-| MariaDB               | 10.4            | 10.6+       |
-| HK2 Core (`hk2/core`) | 1.0.0           | Latest      |
+| Module | Purpose |
+|---|---|
+| `HK2_Core` | Shared HK2 admin tab, menu root, module header block |
+| `Magento_Backend` | Admin routing and menu infrastructure |
+| `Magento_Config` | System configuration framework |
+| `Magento_Store` | Store and website scope handling |
 
-> ⚠ **Magento 2.3.x is end-of-life and is not supported.** PHP 7.x is not supported.
+These dependencies ensure that the HK2 admin tab (`hk2_options_tab`), the HK2 menu parent (`HK2::root`), and the system configuration framework are fully initialized before HK2_AddBootstrap5 registers its fields.
 
----
+## PHP Versions
 
-## Bootstrap Version Support
+| PHP Version | Compatibility |
+|---|---|
+| 8.1 | Fully supported |
+| 8.2 | Fully supported |
+| 8.3 | Fully supported |
+| 8.4 | Fully supported |
 
-The module supports loading Bootstrap directly from CDN. The following versions have been tested and validated:
+The `composer.json` requires `^8.1 || ^8.2 || ^8.3 || ^8.4`, and the PHPCS configuration targets `testVersion="8.2-"` to ensure forward compatibility.
 
-| Bootstrap Version | Status           | Notes                              |
-| ----------------- | ---------------- | ---------------------------------- |
-| **5.3.8**         | ✅ Stable        | Default. Recommended for new sites |
-| **5.3.3**         | ✅ Stable        | Production-ready                   |
-| **5.2.3**         | ✅ Stable        | Supported, not actively maintained |
-| **4.x (latest)**  | ✅ Stable        | Legacy support, no new features    |
-| 3.x and below     | ❌ Not supported | Out of scope                       |
+## Supported Bootstrap Versions
 
-> The Bootstrap version is selected from the Admin Panel — no code changes are required to switch versions.
+| Bootstrap Version | Included |
+|---|---|
+| 4.4.1 | Yes |
+| 4.5.3 | Yes |
+| 4.6.2 | Yes |
+| 5.0.2 | Yes |
+| 5.1.3 | Yes |
+| 5.2.3 | Yes |
+| 5.3.8 | Yes (default) |
 
----
+## Browser Compatibility
 
-## CDN Provider Support
+The Bootstrap files loaded from CDN carry their own browser support matrix. Bootstrap 4 supports Internet Explorer 10+ and all modern browsers. Bootstrap 5 drops Internet Explorer support entirely and targets all modern browsers (Chrome, Firefox, Safari, Edge).
 
-All CDN providers below are whitelisted in the module's `csp_whitelist.xml` and verified to serve Bootstrap assets reliably.
+## Dependency Compatibility Matrix
 
-| CDN Provider           | Host                   | Supported |
-| ---------------------- | ---------------------- | --------- |
-| **jsDelivr**           | `cdn.jsdelivr.net`     | ✅ Yes    |
-| **cdnjs (Cloudflare)** | `cdnjs.cloudflare.com` | ✅ Yes    |
-| **unpkg**              | `unpkg.com`            | ✅ Yes    |
+| Dependency | Required Version | Notes |
+|---|---|---|
+| `hk2/core` | `^1.0` | Shared HK2 foundation module; provides admin tab, menu parent, and module header |
+| `magento/framework` | `^103.0.0` | Core Magento framework; ships with Magento 2.4.x |
+| `php` | `^8.1 \|\| ^8.2 \|\| ^8.3 \|\| ^8.4` | All supported PHP 8.x lines |
 
-> **Default CDN:** jsDelivr (`cdn.jsdelivr.net`)
+No other third-party Composer dependencies are required.
 
----
+## Upgrade Compatibility
 
-## PHP Version Matrix
+- **No breaking schema changes** -- The module defines no database tables, columns, or EAV attributes. Upgrades between versions are purely XML and PHP configuration changes.
+- **No setup patches** -- The module has no `Setup` directory or patch classes. Version bumps in `module.xml` are informational only.
+- **Backward compatible** -- The public API consists of the `BootstrapAssets` block class, the `BootstrapVersion` and `CdnProvider` source models, and the configuration path constants. These identifiers will not change without a major version bump.
 
-| PHP Version | Magento 2.4.4  | Magento 2.4.6 | Magento 2.4.7 |
-| ----------- | -------------- | ------------- | ------------- |
-| **8.2**     | ✅             | ✅            | ✅            |
-| **8.3**     | ⚠ Experimental | ✅            | ✅            |
-| 8.1         | ✅             | ✅            | ⚠             |
-| 7.x         | ❌             | ❌            | ❌            |
+## Sibling Module Compatibility
 
----
+HK2_AddBootstrap5 depends on HK2_Core and can be installed alongside other HK2 modules without conflicts:
 
-## Magento Edition Support
+| Module | Composer Package | Notes |
+|---|---|---|
+| HK2_Core | `hk2/core` | Required dependency |
+| HK2_CspWhitelisting | `hk2/csp-whitelisting` | Independent -- no shared concerns |
+| HK2_SanitizeSearch | `hk2/search-sanitizer` | Independent -- no shared concerns |
+| HK2_ScrollTop | `hk2/scrolltop` | Independent -- no shared concerns |
 
-| Edition                         | Supported |
-| ------------------------------- | --------- |
-| Magento Open Source (Community) | ✅ Yes    |
-| Adobe Commerce (On-Premise)     | ✅ Yes    |
-| Adobe Commerce Cloud            | ✅ Yes    |
-| Magento 2.3.x (EOL)             | ❌ No     |
-
----
-
-## Database Compatibility
-
-This module does **not** create or modify any database tables. No schema changes or data patches are introduced. It is compatible with all database engines supported by Magento 2.4.x.
-
-| Database | Version | Supported |
-| -------- | ------- | --------- |
-| MySQL    | 8.0+    | ✅ Yes    |
-| MariaDB  | 10.4+   | ✅ Yes    |
-
----
-
-## Content Security Policy (CSP)
-
-The module ships with a pre-configured `csp_whitelist.xml` for Magento 2.4.x strict CSP mode.
-
-### Whitelisted Directives
-
-| Directive    | Allowed Hosts                                           |
-| ------------ | ------------------------------------------------------- |
-| `script-src` | `cdn.jsdelivr.net`, `cdnjs.cloudflare.com`, `unpkg.com` |
-| `style-src`  | `cdn.jsdelivr.net`, `cdnjs.cloudflare.com`, `unpkg.com` |
-| `img-src`    | `www.basantmandal.in`                                   |
-
-The module does **not** use:
-
-- `unsafe-inline`
-- `unsafe-eval`
-- Inline `<script>` or `<style>` tags
-
-> ✅ Fully compliant with Magento 2.4.7 default strict CSP mode.
-
----
-
-## Frontend Theme Compatibility
-
-The module injects Bootstrap via Magento's `PageConfig` and layout XML — it does **not** modify any theme files.
-
-| Theme                   | Compatibility                            |
-| ----------------------- | ---------------------------------------- |
-| Magento Blank (default) | ✅ Compatible                            |
-| Magento Luma            | ✅ Compatible                            |
-| Hyva Theme              | ⚠ See note                               |
-| Custom themes           | ✅ Compatible                            |
-| Third-party themes      | ✅ Compatible (verify styling conflicts) |
-
-> ⚠ **Hyva Theme Note:** Hyva uses Alpine.js and Tailwind CSS and intentionally avoids jQuery and Bootstrap. Loading Bootstrap in a Hyva theme may cause CSS conflicts. Testing is strongly recommended.
-
----
-
-## Known Incompatibilities
-
-| Scenario                                          | Impact      | Resolution                                                   |
-| ------------------------------------------------- | ----------- | ------------------------------------------------------------ |
-| Bootstrap JS conflicting with jQuery UI dialogs   | Medium      | Scope Bootstrap JS usage to non-admin pages                  |
-| CSS specificity conflicts with existing theme     | Low–Medium  | Override conflicting styles in theme CSS                     |
-| Hyva theme — CSS layout conflicts                 | Medium–High | Disable module or scope to specific pages via layout handles |
-| CSP strict mode with custom CDN (not whitelisted) | High        | Add CDN host to `csp_whitelist.xml` manually                 |
-
----
-
-## Related
-
-- [Installation Guide](./installation.md)
-- [Usage Guide](./usage.md)
-- [CHANGELOG](../CHANGELOG.md)
-
----
-
-<div align="center">
-  <b>Basant Mandal</b><br>
-  <a href="https://www.basantmandal.in/"><img src="https://img.shields.io/badge/Website-000?style=flat-square&logo=ko-fi&logoColor=white" alt="Website"></a>
-  <a href="https://www.linkedin.com/in/basantmandal/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
-  <a href="mailto:support@basantmandal.in"><img src="https://img.shields.io/badge/Email-support%40basantmandal.in-blue?style=flat-square&logo=gmail" alt="Email"></a>
-  
-  ---
-</div>
+All HK2 modules that depend on HK2_Core share the same admin tab (`hk2_options_tab`) and menu parent (`HK2::root`), ensuring a consistent admin experience.
