@@ -1,53 +1,53 @@
 {
-  "name": "hk2/addbootstrap5",
-  "description": "Magento 2 extension that enables administrators to load Bootstrap 4 or Bootstrap 5 on the storefront without modifying theme files or creating child themes.",
-  "type": "magento2-module",
-  "require": {
-    "php": "^8.1 || ^8.2 || ^8.3 ||  ^8.4",
-    "magento/framework": "^103.0.0",
-    "hk2/core": "^1.0"
-  },
-  "license": [
-    "OSL-3.0"
-  ],
-  "autoload": {
-    "files": [
-      "registration.php"
+    "name": "hk2/addbootstrap5",
+    "description": "Magento 2 extension that enables administrators to load Bootstrap 4 or Bootstrap 5 on the storefront without modifying theme files or creating child themes.",
+    "type": "magento2-module",
+    "license": "OSL-3.0",
+    "require": {
+        "hk2/core": "^1.0",
+        "magento/framework": "^103.0.0",
+        "php": "^8.1 || ^8.2 || ^8.3 || ^8.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "HK2\\AddBootstrap5\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Basant Mandal",
+            "email": "support@basantmandal.in",
+            "homepage": "https://www.basantmandal.in"
+        }
     ],
-    "psr-4": {
-      "HK2\\AddBootstrap5\\": ""
+    "support": {
+        "email": "support@basantmandal.in",
+        "homepage": "https://www.basantmandal.in"
+    },
+    "keywords": [
+        "HK2",
+        "Basant Mandal",
+        "addbootstrap5",
+        "bootstrap4",
+        "bootstrap5",
+        "magento-module",
+        "magento2"
+    ],
+    "archive": {
+        "exclude": [
+            "/.github",
+            "/.gitignore",
+            "/.releaserc.json",
+            "/build",
+            "/composer.lock",
+            "/node_modules",
+            "/package-lock.json",
+            "/package.json",
+            "/phpcs.xml",
+            "/tests"
+        ]
     }
-  },
-  "archive": {
-    "exclude": [
-      "/.github",
-      "/.gitignore",
-      "/.releaserc.json",
-      "/build",
-      "/composer.lock",
-      "/node_modules",
-      "/package-lock.json",
-      "/package.json",
-      "/phpcs.xml",
-      "/tests"
-    ]
-  },
-  "authors": [
-    {
-      "name": "Basant Mandal",
-      "email": "support@basantmandal.in",
-      "homepage": "https://www.basantmandal.in"
-    }
-  ],
-  "support": {
-    "email": "support@basantmandal.in"
-  },
-  "keywords": [
-    "addbootstrap5",
-    "bootstrap4",
-    "bootstrap5",
-    "hk2",
-    "magento-module",
-    "magento2"
-  ]
 }
