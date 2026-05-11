@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace HK2\AddBootstrap5\Model\Config;
 
 use Magento\Framework\Option\ArrayInterface;

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace HK2\AddBootstrap5\Controller\Demo;
 
 use Magento\Framework\App\Action\Action;

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * HK2_AddBootstrap5 - Module registration file
  *
