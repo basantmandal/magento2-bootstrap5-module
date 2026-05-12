@@ -1,3 +1,9 @@
+## [3.2.3](https://github.com/basantmandal/magento2-bootstrap5-module/compare/3.2.2...3.2.3) (2026-05-12)
+
+### 🐛 Bug Fixes
+
+* remove redundant sync tags step in release workflow ([ce581b1](https://github.com/basantmandal/magento2-bootstrap5-module/commit/ce581b11f2e797d9e7551881f9fb23f865aaecbd))
+
 ## [3.2.2](https://github.com/basantmandal/magento2-bootstrap5-module/compare/3.2.1...3.2.2) (2026-05-12)
 
 ### 🐛 Bug Fixes
