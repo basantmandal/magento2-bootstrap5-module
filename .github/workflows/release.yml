@@ -30,6 +30,10 @@ jobs:
           fetch-depth: 0
           fetch-tags: true
 
+      - name: Sync tags
+        run: |
+          git fetch --force --tags
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -45,10 +49,6 @@ jobs:
             @semantic-release/git \
             @semantic-release/github \
             conventional-changelog-conventionalcommits
-
-      - name: Sync tags
-        run: |
-          git fetch --force --tags
 
       - name: Run semantic-release
         env:
