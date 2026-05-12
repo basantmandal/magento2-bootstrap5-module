@@ -1,3 +1,10 @@
+## [3.2.2](https://github.com/basantmandal/magento2-bootstrap5-module/compare/3.2.1...3.2.2) (2026-05-12)
+
+### 🐛 Bug Fixes
+
+* update release configuration to ignore specific paths and sync tags ([049fec2](https://github.com/basantmandal/magento2-bootstrap5-module/commit/049fec26277d2431e3604091f19192f673031af9))
+* update resource attribute for Add Bootstrap 5 menu item in admin configuration ([ae6d700](https://github.com/basantmandal/magento2-bootstrap5-module/commit/ae6d700a841639de232b72fd945c56b4bc9574cd))
+
 ## [3.2.1](https://github.com/basantmandal/magento2-bootstrap5-module/compare/3.2.0...3.2.1) (2026-05-12)
 
 ### 🐛 Bug Fixes
