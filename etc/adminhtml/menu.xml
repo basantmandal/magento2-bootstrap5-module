@@ -4,6 +4,6 @@
     <menu>
         <add id="HK2_AddBootstrap5::settings" title="Add Bootstrap 5" module="HK2_AddBootstrap5" sortOrder="39"
              action="adminhtml/system_config/edit/section/hk2_addbootstrap5_section1"
-             resource="Magento_Backend::content" parent="HK2::root"/>
+             resource="HK2_AddBootstrap5::core_config" parent="HK2::root"/>
     </menu>
 </config>
