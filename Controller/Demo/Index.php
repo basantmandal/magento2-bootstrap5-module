@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace HK2\AddBootstrap5\Controller\Demo;
 
-use Magento\Framework\App\Action\Action;
+use Magento\Framework\App\Action\AbstractAction;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\App\ResponseInterface;
 use Magento\Framework\Controller\ResultInterface;
 use Magento\Framework\View\Result\Page;
 use Magento\Framework\View\Result\PageFactory;
 
-class Index extends Action
+class Index extends AbstractAction
 {
     /**
      * @var PageFactory
