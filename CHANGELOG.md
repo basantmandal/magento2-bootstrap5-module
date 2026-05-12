@@ -1,3 +1,9 @@
+## [3.2.1](https://github.com/basantmandal/magento2-bootstrap5-module/compare/3.2.0...3.2.1) (2026-05-12)
+
+### 🐛 Bug Fixes
+
+* change class inheritance from Action to AbstractAction in Index controller ([5119af5](https://github.com/basantmandal/magento2-bootstrap5-module/commit/5119af57088e7e60a8f04780c50ef72e1bb19b3c))
+
 ## [3.2.0](https://github.com/basantmandal/magento2-bootstrap5-module/compare/3.1.1...3.2.0) (2026-05-12)
 
 ### ✨ Features
