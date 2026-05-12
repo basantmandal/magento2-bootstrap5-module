@@ -1,3 +1,9 @@
+## [3.2.0](https://github.com/basantmandal/magento2-bootstrap5-module/compare/3.1.1...3.2.0) (2026-05-12)
+
+### ✨ Features
+
+* enhance CDN provider options and update script loading in templates ([2fe6efa](https://github.com/basantmandal/magento2-bootstrap5-module/commit/2fe6efa1511cc5c32e4d482afbe1f10cf4e7e29d))
+
 ## [3.1.1](https://github.com/basantmandal/magento2-bootstrap5-module/compare/3.1.0...3.1.1) (2026-05-11)
 
 ### 🐛 Bug Fixes
