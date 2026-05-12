@@ -11,7 +11,7 @@
         }
 
         const script = document.createElement('script');
-        script.src = "<?= $escaper->escapeUrl($block->getCdnUrls()['js']) ?>";
+        script.src = "<?= $block->escapeUrl($block->getCdnUrls()['js']) ?>";
         script.async = true;
         script.onload = function () {
             if (window.define) {
@@ -30,8 +30,8 @@
             "*": {
                 "HK2_AddBootstrap5/js/bootstrap-debug":
                     {
-                        "version": "<?= $escaper->escapeJs($block->getBootstrapVersion()) ?>",
-                        "cdn": "<?= $escaper->escapeJs($block->getCdnProvider()) ?>"
+                        "version": "<?= $block->escapeJs($block->getBootstrapVersion()) ?>",
+                        "cdn": "<?= $block->escapeJs($block->getCdnProvider()) ?>"
                     }
                 }
         }

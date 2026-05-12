@@ -124,16 +124,39 @@ class BootstrapAssets extends Template
             throw new InvalidArgumentException('Bootstrap version is not configured.');
         }
 
+        $provider = $this->getCdnProvider();
+        $templates = $this->getCdnUrlTemplates($provider);
+
         return [
-            'css' => sprintf(
-                'https://cdn.jsdelivr.net/npm/bootstrap@%s/dist/css/bootstrap.min.css',
-                $version
-            ),
-            'js' => sprintf(
-                'https://cdn.jsdelivr.net/npm/bootstrap@%s/dist/js/bootstrap.bundle.min.js',
-                $version
-            ),
+            'css' => sprintf($templates['css'], $version),
+            'js' => sprintf($templates['js'], $version),
         ];
+    }
+
+    /**
+     * Returns CDN URL templates for the given provider.
+     *
+     * @param string $provider
+     * @return array
+     */
+    private function getCdnUrlTemplates(string $provider): array
+    {
+        $templates = [
+            'jsdelivr' => [
+                'css' => 'https://cdn.jsdelivr.net/npm/bootstrap@%s/dist/css/bootstrap.min.css',
+                'js' => 'https://cdn.jsdelivr.net/npm/bootstrap@%s/dist/js/bootstrap.bundle.min.js',
+            ],
+            'cdnjs' => [
+                'css' => 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/%s/css/bootstrap.min.css',
+                'js' => 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/%s/js/bootstrap.bundle.min.js',
+            ],
+            'unpkg' => [
+                'css' => 'https://unpkg.com/bootstrap@%s/dist/css/bootstrap.min.css',
+                'js' => 'https://unpkg.com/bootstrap@%s/dist/js/bootstrap.bundle.min.js',
+            ],
+        ];
+
+        return $templates[$provider] ?? $templates['jsdelivr'];
     }
 
     /**

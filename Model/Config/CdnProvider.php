@@ -16,7 +16,9 @@ class CdnProvider implements ArrayInterface
     public function toOptionArray(): array
     {
         return [
-            ['value' => 'jsdelivr', 'label' => __('jsDelivr CDN')]
+            ['value' => 'jsdelivr', 'label' => __('jsDelivr CDN')],
+            ['value' => 'cdnjs', 'label' => __('cdnjs (Cloudflare) CDN')],
+            ['value' => 'unpkg', 'label' => __('unpkg CDN')]
         ];
     }
 }
