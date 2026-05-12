@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - 'docs/**'
+      - '**/*.md'
+      - '.gitignore'
 
 permissions:
   contents: write
@@ -17,12 +21,14 @@ concurrency:
 jobs:
   release:
     name: Release
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          fetch-tags: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -39,6 +45,10 @@ jobs:
             @semantic-release/git \
             @semantic-release/github \
             conventional-changelog-conventionalcommits
+
+      - name: Sync tags
+        run: |
+          git fetch --force --tags
 
       - name: Run semantic-release
         env:
