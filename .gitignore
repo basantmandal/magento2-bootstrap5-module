@@ -1,7 +1,132 @@
-*.log
-.vscode
-.cache
-.idea
+# ============================================
+# General Files
+# ============================================
 *.sql
 *.zip
+*.tar.gz
+*.tar
+*.rar
+*.7z
+dist/
+build/
 CodeSniffer.log
+*.bak
+*.backup
+*.old
+*.orig
+
+# ============================================
+# Operating System Files
+# ============================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# ============================================
+# IDE and Editor Files
+# ============================================
+.idea/
+.vscode/
+
+# ============================================
+# Logs and Temporary Files
+# ============================================
+*.log
+*.log.*
+*.tmp
+*.temp
+*.cache
+logs/
+var/log/
+var/cache/
+var/tmp/
+
+# ============================================
+# Node.js (for any JS/TS tests)
+# ============================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm/
+.yarn/
+package-lock.json
+yarn.lock
+.pnpm-debug.log*
+.pnpm-store/
+
+# ============================================
+# Environment and Configuration
+# ============================================
+.env
+.env.*
+!.env.example
+*.local
+*_local.xml
+auth.json
+
+# ============================================
+# Magento Related Files
+# ============================================
+generated/
+var/generation/
+var/di/
+var/view_preprocessed/
+pub/static/
+var/page_cache/
+var/composer_home/
+var/
+pub/media/
+pub/static/
+
+# ============================================
+# Security and Sensitive Data
+# ============================================
+*.pem
+*.key
+*.crt
+*.p12
+credentials.json
+secrets.json
+tokens.json
+
+# ============================================
+# Code Review and Analysis Tools
+# ============================================
+.phpcs.cache
+.phpcs-cache
+.php_cs.cache
+.php-cs-fixer.cache
+.phpstan/
+.psalm/
+infection.log 
+
+# ============================================
+# AI - Documentation
+# ============================================
+GEMINI.md
+PROJECT.md
+Claude.md
+Memory.md
+
+# ============================================
+# IDEs and Text Editors
+# ============================================
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+*.swp
+*.swo
+*~
+
+# ============================================
+# Assests
+# ============================================
+docs/assets/Banner
+docs/assets/Logo
