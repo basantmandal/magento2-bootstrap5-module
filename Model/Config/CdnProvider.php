@@ -1,0 +1,24 @@
+<?php
+
+declare(strict_types=1);
+
+namespace HK2\AddBootstrap5\Model\Config;
+
+use Magento\Framework\Option\ArrayInterface;
+
+class CdnProvider implements ArrayInterface
+{
+    /**
+     * Return array of options for Bootstrap 5 CDN provider
+     *
+     * @return array
+     */
+    public function toOptionArray(): array
+    {
+        return [
+            ['value' => 'jsdelivr', 'label' => __('jsDelivr CDN')],
+            ['value' => 'cdnjs', 'label' => __('cdnjs (Cloudflare) CDN')],
+            ['value' => 'unpkg', 'label' => __('unpkg CDN')]
+        ];
+    }
+}

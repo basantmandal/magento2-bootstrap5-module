@@ -1,23 +1,14 @@
 <?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
         <hk2_addbootstrap5_section1>
-            <!-- Group 1 General Settings -->
-            <hk2_addbootstrap5_section1_group1>
-                <hk2_addbootstrap5_enable>1</hk2_addbootstrap5_enable>
-            </hk2_addbootstrap5_section1_group1>
-
-            <!-- Group 2 Version & CDN Settings -->
+            <!-- General Settings -->
             <hk2_addbootstrap5_section1_group2>
-                <hk2_addBootstrap5_select_bootstrap_version>5.2.3</hk2_addBootstrap5_select_bootstrap_version>
-                <hk2_addBootstrap5_select_bootstrap_cdn>jsdelivr</hk2_addBootstrap5_select_bootstrap_cdn>
+                <hk2_addbootstrap5_enable>1</hk2_addbootstrap5_enable>
+                <hk2_addBootstrap5_select_bootstrap_version>5.3.8</hk2_addBootstrap5_select_bootstrap_version>
+                <hk2_addbootstrap5_select_cdn>jsdelivr</hk2_addbootstrap5_select_cdn>
+                <hk2_addbootstrap5_debug>0</hk2_addbootstrap5_debug>
             </hk2_addbootstrap5_section1_group2>
-
-            <!-- Group 3 Debug Settings -->
-            <hk2_addbootstrap5_section1_group3>
-                <hk2_addBootstrap5_debug>No</hk2_addBootstrap5_debug>
-            </hk2_addbootstrap5_section1_group3>
         </hk2_addbootstrap5_section1>
     </default>
 </config>

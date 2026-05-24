@@ -1,20 +1,10 @@
-<!--
-/**
- * @author Basant Mandal <support@hashtagkitto.co.in>
- * @copyright 2023 Copyright (c) Basant Mandal (HK2 - HashTagKitto) (https://www.basantmandal.in/LICENSE.txt)
- * @package HK2_AddBootstrap5
- */
- -->
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <!-- Add Bootstrap CSS File -->
-        <referenceBlock name="head.additional">
-            <block class="HK2\AddBootstrap5\Block\Index" name="addbootstrap5_header" template="HK2_AddBootstrap5::header.phtml" />
-        </referenceBlock>
-
-        <!-- Add Bootstrap JS Activator -->
-        <referenceContainer name="before.body.end">
-            <block class="HK2\AddBootstrap5\Block\Index" name="addbootstrap5_footer" template="HK2_AddBootstrap5::footer.phtml"/>
+        <referenceContainer name="after.body.start">
+            <block class="HK2\AddBootstrap5\Block\Bootstrap\BootstrapAssets" name="hk2.bootstrap.assets"
+                   template="HK2_AddBootstrap5::bootstrap/include.phtml"/>
         </referenceContainer>
     </body>
 </page>
