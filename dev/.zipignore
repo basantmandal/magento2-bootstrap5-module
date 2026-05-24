@@ -1,0 +1,13 @@
+.git/
+.git/**
+.github/
+.github/**
+docs/
+docs/**
+build/
+build/**
+**/*.sh
+**/*.bak
+**/*.swp
+**/*.tmp
+dev/
