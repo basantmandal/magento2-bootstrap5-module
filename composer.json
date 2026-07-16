@@ -3,7 +3,6 @@
   "description": "Magento 2 extension that enables administrators to load Bootstrap 4 or Bootstrap 5 on the storefront without modifying theme files or creating child themes.",
   "type": "magento2-module",
   "license": "OSL-3.0",
-  "version": "3.1.0",
   "prefer-stable": true,
   "require": {
     "hk2/core": "^1.0",
