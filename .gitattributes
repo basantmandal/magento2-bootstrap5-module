@@ -1,0 +1,48 @@
+# Magento 2 Module .gitattributes
+# https://www.gitattributes.io/
+
+# Exclude development files from composer distribution
+.ai export-ignore
+.gitattributes export-ignore
+.gitignore export-ignore
+/.github export-ignore
+/.idea export-ignore
+/.releaserc.json export-ignore
+/.vscode export-ignore
+AGENT.md export-ignore
+CLAUDE.md export-ignore
+GEMENI.md export-ignore
+build/ export-ignore
+dev/ export-ignore
+phpcs.xml export-ignore
+
+# Export all files with normalized line endings
+* text=auto
+
+# Force LF for PHP and config files
+*.php text eol=lf
+*.phtml text eol=lf
+*.xml text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.html text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.sh text eol=lf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.svg binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+*.zip binary
+*.gz binary
