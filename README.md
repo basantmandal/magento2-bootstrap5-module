@@ -1,190 +1,181 @@
-# HK2 Adds Bootstrap 5 - Support in Magento2
+# HK2 Add Bootstrap 5
 
-HK2 Add Bootstrap 5 Module adds Bootstrap 5 Support in the Default or Active Theme. Bootstrap 5 is the newest version of
-Bootstrap and is the world's most popular framework for building responsive, mobile-first sites. Bootstrap is an
-open-source framework that allows you to create responsive, professional-looking websites with ease.
+![Version](https://img.shields.io/badge/version-3.0.0-blue?style=flat-square)
+![License](https://img.shields.io/badge/license-OSL--3.0-green?style=flat-square)
+![Magento](https://img.shields.io/badge/Magento-2.4.4--2.4.9-f97316?style=flat-square&logo=magento&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-8.1%20%7C%7C%208.2%20%7C%7C%208.3%20%7C%7C%208.4-7c3aed?style=flat-square&logo=php&logoColor=white)
+[![Downloads](https://img.shields.io/packagist/dt/hk2/addbootstrap5?style=flat-square)](https://packagist.org/packages/hk2/addbootstrap5)
 
-For backward compatibility you can also select Bootstrap 4 from Module Configuration - Available at Magento Admin -> HK2
-Add Bootstrap 5.
+## Overview
 
-> Please note:- This Module enables Bootstrap 5 in Magento Frontend not in Admin/Backend.
+HK2 Add Bootstrap 5 is a Magento 2 extension that enables store administrators to load Bootstrap 4 or Bootstrap 5 on the storefront. This is accomplished without modifying any theme files or creating child themes, allowing for rapid and modular frontend design integration.
 
-## 💰 Account & Pricing
+## 🎯 Use Cases
 
-This is a Open Source - Free to use Module. No charge or any fee is there to use it.
+- **Custom Styling**: Easily style storefront templates with Bootstrap utilities.
+- **Theme Development**: Prototyping pages and layouts without setting up local asset pipelines.
 
-## 🧐 Features
+## 🚀 Features
 
-1. It uses Bootstrap 5 CDN - Reduces Server Load & Offers better performance, reliability, and security.
-2. It loads Bootstrap CSS, Only If Enabled from Admin Backend.
-3. No Page Slow Loading Issues.
-4. Uses minified version of Bootstrap 5 CSS.
-5. Open Source - Feel Free to send your suggestions of any changes/improvements, will be happy to add the changes.
-6. Backward Compatibility for Bootstrap 4
+- 🎨 Integrates Bootstrap 4 or 5 onto the storefront without child themes.
+- ⚡ Asynchronously loads JS via a RequireJS-compatible inclusion pattern.
+- ⚙️ Adds an Admin Panel configuration for selecting version and CDN provider.
+- 🛠 Provides a demo route (`addbootstrap5/demo/index`) to verify styles.
+- 🔒 Whitelists CDNs in `etc/csp_whitelist.xml` to prevent CSP violations.
 
-## 🚀 Supported Version
+## 🏗 Architecture
 
-- Magento v2.3.5, 2.4.x
+- **Block**: `HK2\AddBootstrap5\Block\Bootstrap\BootstrapAssets` manages stylesheet and javascript dynamic inclusion logic.
+- **Controller**: `HK2\AddBootstrap5\Controller\Demo\Index` serves the Bootstrap demonstration page.
 
-## How to install
+## 🧩 Magento Components
 
-### Method 1: Install ready-to-paste package
+### Blocks
 
-[Download Link - HK2 - Add Boostrap5 - (https://github.com/basantmandal/HK2-Add_Bootstrap5/releases/tag/2.0.0)](https://github.com/basantmandal/HK2-Add_Bootstrap5/releases/tag/2.0.0)
+- `HK2\AddBootstrap5\Block\Bootstrap\BootstrapAssets`
+- `HK2\AddBootstrap5\Block\Demo\Index`
+- `HK2\AddBootstrap5\Block\Adminhtml\System\Config\DemoLinkV4`
+- `HK2\AddBootstrap5\Block\Adminhtml\System\Config\DemoLinkV5`
 
-Download the zip package and unzip it in app/code folder.
+### Controllers
 
-## Enable Extension
+- `HK2\AddBootstrap5\Controller\Demo\Index`
 
-```bash
-php bin/magento module:enable HK2_AddBootstrap5
+### Layout XML
+
+- `view/frontend/layout/default.xml` - Loads asset inclusion block.
+- `view/frontend/layout/addbootstrap5_demo_index.xml` - Sets up the demo page layout.
+
+## 📦 Requirements
+
+- **Magento version**: 2.4.4 - 2.4.9
+- **PHP requirements**: 8.1 || 8.2 || 8.3 || 8.4
+- **Required Extension**: `HK2_Core`
+
+## ⚙️ Installation
+
+1. `composer require hk2/addbootstrap5`
+2. `bin/magento module:enable HK2_AddBootstrap5`
+3. `bin/magento setup:upgrade`
+4. `bin/magento setup:di:compile`
+5. `bin/magento cache:flush`
+
+## 🔧 Configuration
+
+Configure settings under **Stores > Configuration > HK2 > Add Bootstrap5**:
+
+| Field | Description |
+|-------|-------------|
+| **Enable Extension** | Enable or disable the Bootstrap asset loading globally. |
+| **Select Bootstrap Version** | Choose Bootstrap 4 (4.4.1, 4.5.3, 4.6.2) or 5 (5.0.2, 5.1.3, 5.2.3, 5.3.8). |
+| **Select CDN Provider** | Select CDN host (`jsDelivr`, `cdnjs`, `unpkg`). |
+| **Enable Debug Mode** | If enabled, prints version and CDN metadata to the browser console. |
+
+## Usage
+
+Navigate to the frontend route `{{base_url}}/addbootstrap5/demo/index` to verify that Bootstrap is working. You can append `?version=4` or `?version=5` to test respective versions.
+
+## 🗄 Database Changes
+
+Not Applicable
+
+## 📂 Module Structure
+
+```text
+Block/
+├── Adminhtml/
+│   └── System/
+│       └── Config/
+│           ├── DemoLinkV4.php
+│           └── DemoLinkV5.php
+├── Bootstrap/
+│   └── BootstrapAssets.php
+└── Demo/
+    └── Index.php
+Controller/
+└── Demo/
+    └── Index.php
+etc/
+├── adminhtml/
+│   ├── menu.xml
+│   ├── routes.xml
+│   └── system.xml
+├── frontend/
+│   └── routes.xml
+├── acl.xml
+├── config.xml
+├── csp_whitelist.xml
+└── module.xml
+view/
+└── frontend/
+    ├── layout/
+    │   ├── addbootstrap5_demo_index.xml
+    │   └── default.xml
+    ├── templates/
+    │   ├── bootstrap/
+    │   │   └── include.phtml
+    │   └── demo/
+    │       └── index.phtml
+    └── web/
+        └── js/
+            └── bootstrap-debug.js
 ```
 
-```bash
-php bin/magento setup:upgrade
-```
+## 📈 Performance Considerations
 
-```bash
-php bin/magento setup:static-content:deploy
-```
+The JS bundle is loaded asynchronously and only after the load event, preventing blocking of DOM layout calculations.
 
-```bash
-php bin/magento cache:flush
-```
+## 🔐 Security Considerations
 
-## Disable Extension
+- **CSP Whitelisting**: Out-of-the-box whitelisting for CDNs (jsDelivr, unpkg, cdnjs) is configured in `etc/csp_whitelist.xml` to satisfy standard Magento Content Security Policies.
 
-```bash
-php bin/magento module:disable HK2_AddBootstrap5
-```
+## Compatibility
 
-```bash
-php bin/magentosetup:upgrade
-```
+Reference: [docs/compatibility.md](docs/compatibility.md)
 
-```bash
-php bin/magento cache:flush
-```
+| Platform | Supported Versions |
+|----------|-------------------|
+| Magento  | 2.4.4 - 2.4.9     |
+| PHP      | 8.1, 8.2, 8.3, 8.4 |
 
-## Backend Settings
+## 🛠 Troubleshooting
 
-Login to Magento Admin -> Add Bootstrap5 -> Configuration -> Enable
+### RequireJS/AMD Conflicts
 
-Please clear the cache after enabling the option.
+If third-party scripts fail with AMD conflicts on the page after enabling Bootstrap, the RequireJS-wrapper inside `include.phtml` restores `window.define.amd` safely. Ensure no other module interferes with script loads.
 
-Once Installed, You can check in Magento Frontend - View Page Source (Right Click - View Page Source) & you can see
-Bootstrap 5 CDN is Added. Please check the screenshot in case you have any doubts.
+### CSP Errors in Console
 
-Note:- This module enables Bootstrap CDN in Magento Frontend.
+Verify that the `HK2_Csp` module is active or that your web server allows connections to selected CDNs.
 
-![Screenshot4](docs/images/ScreenShot4.png)
-![Screenshot5](docs/images/ScreenShot5.png)
-![Screenshot4](docs/images/ScreenShot1.png)
+## 🤝 Contributing
 
-### Method 2: Install via composer (Recommend)
+Contributions are welcome! If you'd like to improve the installer:
 
-Run the following command in Magento 2 root folder
+- ⭐ **Star this repository** (Helps others find it!)
+- 🍴 Fork the project
+- 🐛 Report bugs
+- 💡 Suggest new features
+- 🤝 Contribute improvements
 
-```bash
-composer require hk2/addbootstrap5
-```
+Every ⭐ helps increase the visibility of the project and motivates further development.
 
-```bash
-php bin/magento setup:upgrade
-```
+## ⚖️ Disclaimer
 
-```bash
-php bin/magento setup:static-content:deploy
-```
+The author provides this installation script "as is" without any warranties. Users are responsible for ensuring that running this script complies with their internal security and software requirements.
 
-Note: It is always recommended to install and verify the extension first in the development or staging environment and
-once verified then install it on production environment.
+---
 
-## Screenshots
+## 🤝 Support
 
-1. Admin Panel - Settings
-   ![Screenshot1](docs/images/ScreenShot1.png)
+For bug reports, feature requests, and general support:
 
-2. Boostrap5 CSS - Addition
-   ![Screenshot2](docs/images/ScreenShot2.png)
+- **Author**: Basant Mandal
+- **Email**: <support@basantmandal.in>
+- **Website**: <https://www.basantmandal.in>
 
-3. Boostrap5 Demo
-   ![Screenshot3](docs/images/ScreenShot6.jpg)
+## License
 
-4. Boostrap4 Demo
-   ![Screenshot3](docs/images/ScreenShot7.jpg)
+This project is licensed under the OSL 3.0 License. See the [LICENSE.txt](LICENSE.txt) file for details.
 
-## 🛠️ Maintenance mode
-
-You may want to enable the maintenance mode when installing or updating the module, especially when working on a production website. To do so, run the two commands below before and after running the other setup commands:
-
-### Enable Maintenance Mode
-
-```bash
-php bin/magento maintenance:enable
-```
-
-### Disable Maintenance Mode
-
-```bash
-php bin/magento maintenance:disable
-```
-
-## 🤫 Privacy
-
-This extension does not read, change, store, or transmit any of your personal data (e.g., logins, passwords, messages, contacts) from any of the sites or your computer in absolutely any form.
-
-## 📫 Support
-
-For support or any bug report or changes mail me at - <support@hashtagkitto.co.in>
-
-## 🐞 Bug Report
-
-Please open an [issue](https://github.com/basantmandal/HK2-Add_Bootstrap5/issues) on GitHub.
-
-When filing a bug remember that the better written the bug is, the more likely it is to be fixed.
-
-You can also reach us at <support@hashtagkitto.co.in>
-
-## 🍰 Contribution Guidelines 💖
-
-Contributions are welcome! If you’d like to contribute to this project:
-
-- Fork the repository.
-- Create a new branch (git checkout -b feature/your-feature-name).
-- Make your changes and commit them (git commit -am 'Add new feature').
-- Push to the branch (git push origin feature/your-feature-name).
-- Open a pull request.
-
-**Please Note** :- I may be a bit delayed in responding or slow in responding due to low amount of free time. I apologize for the inconvenience and I appreciate your patience
-
-## 📜 License
-
-Copyright (c) 2022, 2025 [**Basant Mandal (HK2 - Hash Tag Kitto)**](https://www.basantmandal.in/)
-
-## 🤝 Consent
-
-By using HK2 AddBootstrap 5 Whitelisting Module, you hereby consent to our disclaimer and agree to its terms.
-
-## 📢 Disclaimer
-
-> **Basant Mandal (HK2 - Hash Tag Kitto)** does not make any warranties about the completeness, reliability and accuracy of this image or its related products. Any action you take upon the information you find here is strictly at your own risk.
-
-> **Basant Mandal (HK2 - Hash Tag Kitto)** will not be liable for any losses and/or damages in connection with the use of our website.
-
-## 💖Like my work? Help Us
-
-Please rate my project or give some stars at [https://github.com/basantmandal/HK2-Add_Bootstrap5](https://github.com/basantmandal/HK2-Add_Bootstrap5). You can also contribute to make my Open Source Contribution more frequent and help others - [https://www.buymeacoffee.com/basantmandal](https://www.buymeacoffee.com/basantmandal) or [https://www.basantmandal.in/buymecoffee](https://www.basantmandal.in/buymecoffee)
-
-## 📫 Feedback
-
-If you have any feedback, please reach out to us at <support@hashtagkitto.co.in>
-
-## 🛡️ License
-
-[![MIT License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://github.com/basantmandal/HK2-Add_Bootstrap5/blob/main/LICENSE.txt)
-
-## 🔗 Links
-
-[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://www.basantmandal.in/)
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/basantmandal/)
+---
