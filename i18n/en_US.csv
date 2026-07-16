@@ -1,21 +1,26 @@
-"AddBootstrap5", "Add Bootstrap 5",
-"AddBootstrap5_Bootstrap4DemoLinkMsg", "For Bootstrap 4.x Demo Page - Click",
-"AddBootstrap5_Bootstrap5DemoLinkMsg", "For Bootstrap 5.x Demo Page - Click",
-"AddBootstrap5_BootstrapOptions", "Bootstrap Options",
-"AddBootstrap5_Configuration", "Add Bootstrap5",
-"AddBootstrap5_Debug", "Debug",
-"AddBootstrap5_Debug_Help_Message", "Enables Debug Mode - Only for Testing Purpose",
-"AddBootstrap5_DemoLinks", "Demo Links",
-"AddBootstrap5_Enable", "Enable Module",
-"AddBootstrap5_Enable_Help_Message", "Enables Bootstrap in your Magento Frontend",
-"AddBootstrap5_EnableDebugMode", "Enable Debug Mode",
-"AddBootstrap5_GeneralOptions", "General Options",
-"AddBootstrap5_Select_Bootstrap_Version_Help_Message", "Select Bootstrap Version",
-"AddBootstrap5_SelectBootstrapVersion", "Select Bootstrap Version",
-"Bootstrap4.6.2", "Bootstrap 4.6.2",
-"Bootstrap5.1.3", "Bootstrap 5.1.3",
-"Bootstrap5.2.3", "Bootstrap 5.2.3",
-"Bootstrap5.3.0", "Bootstrap 5.3.0",
-"Bootstrap5.3.3", "Bootstrap 5.3.3",
-"cdnjs_cdn", "cdnjs",
-"jsdelivr_cdn", "jsDelivr",
+"Add Bootstrap5","Add Bootstrap5"
+"About HK2 Extensions","About HK2 Extensions"
+"General Settings","General Settings"
+"Enable Extension","Enable Extension"
+"Enable or disable the Bootstrap 5 extension","Enable or disable the Bootstrap 5 extension"
+"Select Bootstrap Version","Select Bootstrap Version"
+"Select Bootstrap version from 4.0.0 to 5.3.8","Select Bootstrap version from 4.0.0 to 5.3.8"
+"Select CDN Provider","Select CDN Provider"
+"Select CDN provider for loading Bootstrap files","Select CDN provider for loading Bootstrap files"
+"Enable Debug Mode","Enable Debug Mode"
+"Enable debug mode to display Bootstrap loading information","Enable debug mode to display Bootstrap loading information"
+"Demonstration & Links","Demonstration & Links"
+"Bootstrap 4 Demo","Bootstrap 4 Demo"
+"Bootstrap 5 Demo","Bootstrap 5 Demo"
+"Add Bootstrap 5","Add Bootstrap 5"
+"HK2 Bootstrap5 Settings","HK2 Bootstrap5 Settings"
+"jsDelivr CDN","jsDelivr CDN"
+"Bootstrap 4.4.1","Bootstrap 4.4.1"
+"Bootstrap 4.5.3","Bootstrap 4.5.3"
+"Bootstrap 4.6.2","Bootstrap 4.6.2"
+"Bootstrap 5.0.2","Bootstrap 5.0.2"
+"Bootstrap 5.1.3","Bootstrap 5.1.3"
+"Bootstrap 5.2.3","Bootstrap 5.2.3"
+"Bootstrap 5.3.8 (Latest)","Bootstrap 5.3.8 (Latest)"
+"Bootstrap 4 Demo Page","Bootstrap 4 Demo Page"
+"Bootstrap 5 Demo Page","Bootstrap 5 Demo Page"
