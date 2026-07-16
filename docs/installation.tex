@@ -1,0 +1,366 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% HK2 Add Bootstrap 5 - Installation Guide
+%
+% Author:  Basant Mandal
+% Email:   support@basantmandal.in
+% Support: https://www.basantmandal.in
+% Version: 3.0.0
+% Last Updated: July 14, 2026
+%
+% Placeholders replaced:
+% HK2 Add Bootstrap 5
+% Basant Mandal
+% support@basantmandal.in
+% https://www.basantmandal.in
+% 3.0.0
+% July 14, 2026
+% Magento 2 extension that enables administrators to load Bootstrap 4 or Bootstrap 5 on the storefront without modifying theme files or creating child themes.
+% hk2/addbootstrap5
+% HK2_AddBootstrap5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt,a4paper]{article}
+
+% ==========================================================
+% GEOMETRY
+% ==========================================================
+\usepackage[top=3cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+
+% ==========================================================
+% ENCODING / FONTS
+% ==========================================================
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% ==========================================================
+% TABLES
+% ==========================================================
+\usepackage[table]{xcolor}
+\usepackage{longtable}
+\usepackage{booktabs}
+
+% ==========================================================
+% HYPERLINKS
+% ==========================================================
+\usepackage[colorlinks=true]{hyperref}
+
+% ==========================================================
+% HEADER / FOOTER
+% ==========================================================
+\usepackage{fancyhdr}
+
+% ==========================================================
+% SECTION FORMATTING
+% ==========================================================
+\usepackage{titlesec}
+
+% ==========================================================
+% COLOURED BOXES
+% ==========================================================
+\usepackage[most]{tcolorbox}
+
+% ==========================================================
+% CODE BLOCKS
+% ==========================================================
+\usepackage{listings}
+
+% ==========================================================
+% GRAPHICS
+% ==========================================================
+\usepackage{graphicx}
+
+% ==========================================================
+% PARAGRAPH SPACING
+% ==========================================================
+\usepackage{parskip}
+
+% ==========================================================
+% TOC
+% ==========================================================
+\usepackage{tocloft}
+
+% ==========================================================
+% LISTS
+% ==========================================================
+\usepackage{enumitem}
+
+% ==========================================================
+% LAST PAGE
+% ==========================================================
+\usepackage{lastpage}
+
+% ==========================================================
+% SYMBOLS
+% ==========================================================
+\usepackage{amssymb}
+
+% ==========================================================
+% COLOUR PALETTE
+%
+% DO NOT MODIFY
+% ==========================================================
+\definecolor{primary}{HTML}{0A2540}
+\definecolor{accent}{HTML}{0066CC}
+\definecolor{tablehead}{HTML}{EAF2FF}
+\definecolor{codebg}{HTML}{F5F7FA}
+
+% ==========================================================
+% HYPERLINK CONFIGURATION
+% ==========================================================
+\hypersetup{
+    colorlinks=true,
+    linkcolor=accent,
+    urlcolor=accent,
+    citecolor=accent,
+    pdftitle={HK2 Add Bootstrap 5 Installation Guide},
+    pdfauthor={Basant Mandal},
+    pdfsubject={HK2 Add Bootstrap 5 Installation Guide},
+    pdfcreator={HK2 Documentation Generator - July 14, 2026},
+    pdfproducer={HK2 Core},
+    pdfkeywords={Magento 2, HK2 Add Bootstrap 5, Installation Guide, HK2}
+}
+
+% ==========================================================
+% CODE STYLE
+% ==========================================================
+\lstdefinestyle{shell}{
+  language=bash,
+  backgroundcolor=\color{codebg},
+  basicstyle=\ttfamily\footnotesize,
+  breaklines=true,
+  frame=single,
+  rulecolor=\color{gray!30},
+  xleftmargin=2mm,
+  xrightmargin=2mm,
+  aboveskip=6pt,
+  belowskip=6pt,
+  literate={|}{$\vert$}1
+}
+
+% ==========================================================
+% CALLOUT BOXES
+% ==========================================================
+\newtcolorbox{note}{
+  colback=blue!5,
+  colframe=blue!40,
+  title=Note
+}
+
+\newtcolorbox{warning}{
+  colback=orange!5,
+  colframe=orange!60,
+  title=Warning
+}
+
+% ==========================================================
+% HEADER / FOOTER
+% ==========================================================
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyhead[L]{\small HK2 Add Bootstrap 5 | Installation Guide}
+
+\fancyfoot[C]{%
+\small Version 3.0.0 |
+Page \thepage{} of \pageref{LastPage}
+}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% ==========================================================
+% SECTION FORMATTING
+% ==========================================================
+\titleformat{\section}
+{\large\bfseries\color{primary}}
+{}{0em}{}
+[\vspace{-2pt}]
+
+\titleformat{\subsection}
+{\bfseries\color{accent}}
+{}{0em}{}
+
+\titleformat{\subsubsection}
+{\bfseries}
+{}{0em}{}
+
+% ==========================================================
+% DOCUMENT START
+% ==========================================================
+\begin{document}
+
+% ==========================================================
+% COVER PAGE
+% ==========================================================
+\begin{titlepage}
+\centering
+
+\vspace*{4cm}
+
+{\Huge\bfseries HK2 Add Bootstrap 5}\\[0.6cm]
+
+{\Large INSTALLATION GUIDE}\\[2.5cm]
+
+{\Large \textbf{Basant Mandal}}\\[0.9cm]
+
+\href{mailto:support@basantmandal.in}{\textbf{support@basantmandal.in}}
+
+\vspace{0.3cm}
+
+\href{https://www.basantmandal.in}{\textbf{https://www.basantmandal.in}}
+
+\\[5cm]
+
+{\textbf{Version 3.0.0}}\\[0.3cm]
+
+{\textbf{July 14, 2026}}\\[4cm]
+
+\vfill
+
+\end{titlepage}
+
+% ==========================================================
+% TABLE OF CONTENTS
+% ==========================================================
+\tableofcontents
+\newpage
+
+% ==========================================================
+% OVERVIEW
+% ==========================================================
+\section{Overview}
+
+Magento 2 extension that enables administrators to load Bootstrap 4 or Bootstrap 5 on the storefront without modifying theme files or creating child themes.
+
+% ==========================================================
+% INSTALLATION
+% ==========================================================
+\section{Installation}
+
+\subsection{Composer Installation}
+
+\begin{lstlisting}[style=shell]
+composer require hk2/addbootstrap5
+\end{lstlisting}
+
+\subsection{Enable Module}
+
+\begin{lstlisting}[style=shell]
+bin/magento module:enable HK2_AddBootstrap5
+\end{lstlisting}
+
+\subsection{Run Setup Upgrade}
+
+\begin{lstlisting}[style=shell]
+bin/magento setup:upgrade
+\end{lstlisting}
+
+\subsection{Compile Dependency Injection}
+
+\begin{lstlisting}[style=shell]
+bin/magento setup:di:compile
+\end{lstlisting}
+
+\subsection{Deploy Static Content (Production Mode Only)}
+
+\begin{lstlisting}[style=shell]
+bin/magento setup:static-content:deploy
+\end{lstlisting}
+
+\subsection{Clean Cache}
+
+\begin{lstlisting}[style=shell]
+bin/magento cache:clean
+\end{lstlisting}
+
+\subsection{Flush Cache}
+
+\begin{lstlisting}[style=shell]
+bin/magento cache:flush
+\\end{lstlisting}
+
+\subsection{Verification}
+
+\begin{enumerate}
+    \item Verify the module is enabled.
+    \item Verify configuration settings exist.
+    \item Verify frontend functionality works.
+    \item Verify no errors exist in the Magento logs.
+\end{enumerate}
+
+% ==========================================================
+% UNINSTALLATION
+% ==========================================================
+\section{Uninstallation}
+
+\subsection{Disable Module}
+
+\begin{lstlisting}[style=shell]
+bin/magento module:disable HK2_AddBootstrap5
+\end{lstlisting}
+
+\subsection{Remove Package}
+
+\begin{lstlisting}[style=shell]
+composer remove hk2/addbootstrap5
+\end{lstlisting}
+
+\subsection{Run Setup Upgrade}
+
+\begin{lstlisting}[style=shell]
+bin/magento setup:upgrade
+\end{lstlisting}
+
+\subsection{Clean and Flush Cache}
+
+\begin{lstlisting}[style=shell]
+bin/magento cache:clean && bin/magento cache:flush
+\end{lstlisting}
+
+\subsection{Production Mode Cleanup}
+
+\begin{lstlisting}[style=shell]
+bin/magento setup:di:compile
+bin/magento setup:static-content:deploy
+\end{lstlisting}
+
+% ==========================================================
+% TROUBLESHOOTING
+% ==========================================================
+\section{Troubleshooting}
+
+\subsection{Module Not Detected}
+
+\begin{lstlisting}[style=shell]
+bin/magento module:status HK2_AddBootstrap5
+\end{lstlisting}
+
+\subsection{Common Installation Issues}
+
+\begin{longtable}{ll}
+\toprule
+\textbf{Issue} & \textbf{Resolution} \\
+\midrule
+\endhead
+Module not enabled & Verify module status. \\
+Composer issue & Verify package installation. \\
+Compilation error & Run Dependency Injection compilation again. \\
+Cache issue & Flush Magento caches. \\
+Permission issue & Verify filesystem ownership and permissions. \\
+\bottomrule
+\end{longtable}
+
+% ==========================================================
+% SUPPORT
+% ==========================================================
+\section{Support}
+
+\textbf{For support, bug reports, feature requests, or improvements:}
+
+\begin{itemize}
+  \item \textbf{Author:} Basant Mandal
+  \item \textbf{Support:} \href{mailto:support@basantmandal.in}{support@basantmandal.in}
+  \item \textbf{Support URL:} \href{https://www.basantmandal.in}{https://www.basantmandal.in}
+\end{itemize}
+
+\end{document}
